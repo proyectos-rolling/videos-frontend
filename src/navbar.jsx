@@ -5,7 +5,7 @@ import Logo from './logo.jpg';
 import Modalito from './Modal';
 import './App.css';
 
-const Menu = () => {
+const Menu = ({categories,setCategories}) => {
     return (
         <Navbar className="navbar" expand="lg">
             <Image src={Logo} className="logo" rounded />
@@ -14,7 +14,7 @@ const Menu = () => {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                 </Nav>
-                <Modalito />
+                <Modalito categories={categories} setCategories={setCategories}/>
             </Navbar.Collapse>
         </Navbar>
     )
