@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Menu categories={categories} setCategories={setCategories} />
-      <h1>Categorias</h1>
+      <h1 className="col-12  d-flex justify-content-center">Categorias</h1>
       <ul>
         {categories.map(category => <li>{category.name}</li>)}
       </ul>

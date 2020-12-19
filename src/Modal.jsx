@@ -61,7 +61,7 @@ const Modalito = ({categories, setCategories}) => {
         </Modal.Header>
         <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicPassword">
-    <Form.Control name="name" value={data.name} type="text" placeholder="Categoria Nueva" onChange={handleChange}  />
+    <Form.Control required="text" name="name" value={data.name} type="text" placeholder="Categoria Nueva" onChange={handleChange}  />
   </Form.Group>
   <Button variant="danger" type="submit">
     AGREGAR

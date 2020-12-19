@@ -19,17 +19,17 @@ const Pie = () => {
             </div>
             <hr />
             <div className="row d-flex ">
-              <div className="col-3 d-flex justify-content-center" >
+              <div className="col-4 d-flex justify-content-center" >
                 <a href="#top">
                   <h5 className="text-danger">Inicio</h5>
                 </a>
               </div>
-              <div className="col-3 d-flex justify-content-center" >
+              <div className="col-4 d-flex justify-content-center " >
                 <a href="#top">
                   <h5 className="text-danger">Agregar Video</h5>
                 </a>
               </div>
-              <div className="col-3 d-flex justify-content-center" >
+              <div className="col-4  d-flex justify-content-center" >
                 <a href="#top">
                   <h5 className="text-danger">Contacto</h5>
                 </a>
