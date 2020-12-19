@@ -38,7 +38,7 @@ const Pie = () => {
             <hr />
           </div>
           <div className="row d-flex justify-content-around mt-2">
-            <h5 className="text-danger">© 2020 VIDEOREPARA</h5>
+            <h5 className="text-danger">© 2020 VIDEOPUBLICO</h5>
           </div>
         </footer>
       </React.Fragment>

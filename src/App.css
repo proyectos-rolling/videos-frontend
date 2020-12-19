@@ -2,16 +2,21 @@
     background-color:white;
     height: 80px;
     font-size:20px;
+    font-family: 'Contrail One', cursive;
     }
 
     .navbar.Brand{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Contrail One', cursive;
     color:black;
   }
 
 .logo{
   width: 70px;
   height: 70px;
+}
+.logo2{
+    width: 120px;
+    height: 120px;  
 }
 
 .logo1{
@@ -31,6 +36,11 @@
   color: white;
 }
 
-ul{
-  margin-bottom: 10%;
+h1{
+  padding: 3%;
+  font-family: 'Contrail One', cursive;
+}
+
+Form{
+  font-family: 'Contrail One', cursive;
 }
