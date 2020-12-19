@@ -9,7 +9,7 @@ const Menu = () => {
     return (
         <Navbar className="navbar" expand="lg">
             <Image src={Logo} className="logo" rounded />
-            <Navbar.Brand  className="text-danger" href="#home">RANDOM</Navbar.Brand>
+            <Navbar.Brand className="text-danger" href="#home">YOUPUBLIC</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
