@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Menu from './navbar';
 import Pie from './footer';
+import Video from './components/videos/Video';
+import { Button } from 'react-bootstrap'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const getVideoImageUrl = (url) => {
   const preRegex = /.*v=(.*)/; //capturo todo lo que está después del "v="
@@ -23,11 +26,11 @@ function App() {
     fetch(apiurl + "categories").then(res => res.json()).then(json => setCategories(json))
   }, [])
 
-    useEffect(() => {
-      fetch(apiurl + "videos")
-        .then((res) => res.json())
-        .then((json) => setVideos(json));
-    }, []);
+  useEffect(() => {
+    fetch(apiurl + "videos")
+      .then((res) => res.json())
+      .then((json) => setVideos(json));
+  }, []);
 
   return (
     <>
@@ -41,7 +44,18 @@ function App() {
               {category.videos.map((video) => (
                 <li>
                   <img src={getVideoImageUrl(video.url)} alt={video.title} />
-                  <a href={video.url}>{video.title}</a>
+                  {/* <a href={video.url}>{video.title}</a> */}
+                  <Router>
+                    <Link to="/video">
+                      <Button>Ir al Video</Button>
+                    </Link>
+                    <Switch>
+                      <Route path="/video">
+                        <Video />
+                      </Route>
+                    </Switch>
+                  </Router>
+
                 </li>
               ))}
             </ul>
