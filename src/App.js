@@ -14,12 +14,29 @@ function App() {
     fetch(apiurl + "categories").then(res => res.json()).then(json => setCategories(json))
   }, [])
 
+    useEffect(() => {
+      fetch(apiurl + "videos")
+        .then((res) => res.json())
+        .then((json) => setVideos(json));
+    }, []);
+
   return (
     <>
       <Menu categories={categories} setCategories={setCategories} />
       <h1 className="col-12  d-flex justify-content-center">Categorias</h1>
       <ul>
-        {categories.map(category => <li>{category.name}</li>)}
+        {categories.map((category) => (
+          <div>
+            <li>{category.name}</li>
+            <ul>
+              {category.videos.map((video) => (
+                <li>
+                  <a href={video.url}>{video.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </ul>
       <Pie />
     </>
