@@ -30,8 +30,15 @@ const Modalito = ({categories, setCategories}) => {
         if (response.ok) {
           setData({
             name: ""
-          });
+          })
          setShow(false) 
+        } else {
+          setData({
+            name: "",
+          });
+          alert("Ya existe categoría")
+          setShow(false);
+          return
         }
         return response.json();
       })
