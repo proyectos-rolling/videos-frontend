@@ -12,9 +12,9 @@ const getVideoImageUrl = (url) => {
   return VideoImageUrl
 }
 
+const apiurl = process.env.REACT_APP_APIURL;
 
 function App() {
-  const apiurl = process.env.REACT_APP_APIURL;
   const [categories, setCategories] = useState([]);
 
   const [videos, setVideos] = useState([])
