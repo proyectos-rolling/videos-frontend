@@ -6,6 +6,7 @@ import Video from './components/videos/Video';
 import { Button } from 'react-bootstrap'
 import { Switch, Route, Link } from "react-router-dom";
 import AddVideo from "./components/videos/AddVideos";
+import Quote from "./components/Quote"
 
 const getVideoImageUrl = (url) => {
   const preRegex = /.*v=(.*)/; //capturo todo lo que está después del "v="
@@ -44,6 +45,7 @@ function App() {
       />
       <Switch>
         <Route path="/" exact>
+          <Quote />
           <h1 className="col-12  d-flex justify-content-center">Categorias</h1>
           <ul>
             {categories.map((category) => (

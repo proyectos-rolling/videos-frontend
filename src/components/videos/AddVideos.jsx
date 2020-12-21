@@ -180,7 +180,7 @@ const addVideoStyle = {
   fontSize: "3rem",
   right: "2rem",
   bottom: "2rem",
-  color: "tomato",
-  backgroundColor: "#333",
-  cursor: "pointer"
+  color: "white",
+  backgroundColor: "#dc3545",
+  cursor: "pointer",
 };
