@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     fetch(apiurl + "categories").then(res => res.json()).then(json => setCategories(json))
-  }, [])
+  }, [videos])
 
   useEffect(() => {
     fetch(apiurl + "videos")
