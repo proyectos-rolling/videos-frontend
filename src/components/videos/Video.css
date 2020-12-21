@@ -1,5 +1,6 @@
 .contendor{
     position: relative;
+    justify-content: center;
     padding: 8px;
 }
 
