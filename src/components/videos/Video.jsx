@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useHistory, Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import ReactPlayer from 'react-player/youtube'
+import { FacebookProvider, Comments } from "react-facebook";
 import './Video.css'
 
 
@@ -51,17 +52,14 @@ const Video = ({ videos, setVideos }) => {
         />
 
         <div>
-            <Button variant="danger" className="my-3" onClick={handleDelete}>
-              Eliminar Video
-            </Button>
+          <Button variant="danger" className="my-3" onClick={handleDelete}>
+            Eliminar Video
+          </Button>
         </div>
 
-        <div
-          class="fb-comments"
-          data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
-          data-width=""
-          data-numposts="5"
-        ></div>
+        <FacebookProvider appId="1043468026117602">
+          <Comments href="https://developers.facebook.com/docs/plugins/comments#configurator" />
+        </FacebookProvider>
       </div>
     );
 }
