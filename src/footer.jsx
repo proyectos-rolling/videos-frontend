@@ -12,27 +12,19 @@ const Pie = () => {
           <div className="container">
             <div className="row d-flex">
               <div className="col-12 col-md d-flex justify-content-center align-items-center">
-                <a target="_blank" rel="noreferrer" href="#link">
-                  <img width="175" height="175" src={Logo} alt="logo1" />
-                </a>
+                                 <img width="175" height="175" src={Logo} alt="logo1" />             
               </div>
             </div>
             <hr />
             <div className="row d-flex ">
               <div className="col-4 d-flex justify-content-center" >
-                <a href="#top">
                   <h5 className="text-danger">Inicio</h5>
-                </a>
               </div>
               <div className="col-4 d-flex justify-content-center " >
-                <a href="#top">
                   <h5 className="text-danger">Agregar Video</h5>
-                </a>
               </div>
               <div className="col-4  d-flex justify-content-center" >
-                <a href="#top">
                   <h5 className="text-danger">Contacto</h5>
-                </a>
               </div>
             </div>
             <hr />
