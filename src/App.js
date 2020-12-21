@@ -51,6 +51,7 @@ function App() {
             {categories.map((category) => (
               <div>
                 <li><h3>{category.name}</h3></li>
+                <br/>
                 <ul>
                   {category.videos.map((video) => (
                     <li>
@@ -65,6 +66,7 @@ function App() {
                       </Link>
                     </li>
                   ))}
+                  <br/>
                 </ul>
               </div>
             ))}
