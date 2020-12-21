@@ -41,10 +41,27 @@ const Video = ({ videos, setVideos }) => {
     }
     return (
       <div className="container">
-          <h1 className="col-12 d-flex justify-content-center">{video.title}</h1>
-        <ReactPlayer url={video.url} width="100%" controls playing className='react-player ratio ratio-1x1'/>
+        <h1 className="col-12 d-flex justify-content-center">{video.title}</h1>
+        <ReactPlayer
+          url={video.url}
+          width="100%"
+          controls
+          playing
+          className="react-player ratio ratio-1x1"
+        />
 
-        <Button variant="danger" className="my-3" onClick={handleDelete} >Eliminar Video</Button>
+        <div>
+            <Button variant="danger" className="my-3" onClick={handleDelete}>
+              Eliminar Video
+            </Button>
+        </div>
+
+        <div
+          class="fb-comments"
+          data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+          data-width=""
+          data-numposts="5"
+        ></div>
       </div>
     );
 }
