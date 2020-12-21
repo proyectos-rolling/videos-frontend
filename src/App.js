@@ -50,7 +50,7 @@ function App() {
           <ul>
             {categories.map((category) => (
               <div>
-                <li>{category.name}</li>
+                <li><h3>{category.name}</h3></li>
                 <ul>
                   {category.videos.map((video) => (
                     <li>
@@ -61,7 +61,7 @@ function App() {
                       {/* <a href={video.url}>{video.title}</a> */}
 
                       <Link to={"/video/" + video._id}>
-                        <Button>Ir al Video</Button>
+                        <Button variant="danger">Ir al Video</Button>
                       </Link>
                     </li>
                   ))}

@@ -1,0 +1,9 @@
+.contendor{
+    position: relative;
+    padding: 8px;
+}
+
+.react-player{
+    position: absolute;
+    padding: 8px;
+}

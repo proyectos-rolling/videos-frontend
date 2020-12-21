@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useHistory, Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import ReactPlayer from 'react-player/youtube'
+import './Video.css'
 
 const apiurl = process.env.REACT_APP_APIURL;
 
@@ -38,9 +39,9 @@ const Video = ({ videos, setVideos }) => {
         );
     }
     return (
-      <div className="py-5">
+      <div className="contenedor">
           <h1 className="col-12 d-flex justify-content-center">{video.title}</h1>
-        <ReactPlayer url={video.url} width="100%" controls playing />
+        <ReactPlayer url={video.url} width="100%" controls playing className='react-player'/>
 
         <Button variant="danger" className="my-3" onClick={handleDelete} >Eliminar Video</Button>
       </div>
