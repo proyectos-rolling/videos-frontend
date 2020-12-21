@@ -6,5 +6,6 @@
 
 .react-player{
     position: relative;
+    justify-content: center;
     padding: 8px;
 }
