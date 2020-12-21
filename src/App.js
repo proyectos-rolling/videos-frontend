@@ -4,7 +4,7 @@ import Menu from './navbar';
 import Pie from './footer';
 import Video from './components/videos/Video';
 import { Button } from 'react-bootstrap'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 
 const getVideoImageUrl = (url) => {
   const preRegex = /.*v=(.*)/; //capturo todo lo que está después del "v="
