@@ -35,20 +35,21 @@ function App() {
   }, []);
 
   const handleDeleteCategory = async (id) => {
-    // const confirm = window.confirm("Está seguro que quiere borrar la categoria?")
-    console.log(id)
-    // if (!confirm) {
-    //   return
-    // }
-    // try {
-    //   const response = await fetch(apiurl + "categories/" + category._id, { method: "DELETE" })
-    //   if (response.ok) {
-    //     console.log(response)
-    //     // setCategories(categories.filter(category => category._id !== id))
-    //   }
-    // } catch (error) {
-    //   console.log(error)
-    // }
+    const confirm = window.confirm("Está seguro que quiere borrar la categoria?")
+    if (!confirm) {
+      return
+    }
+    try {
+      const response = await fetch(apiurl + "categories/" + id, { method: "DELETE" })
+      const json = await response.json()
+      if (response.ok) {
+        setCategories(categories.filter(category => category._id !== id))
+        return
+      }
+      alert(json.msg)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
