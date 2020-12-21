@@ -4,9 +4,10 @@ import Menu from './navbar';
 import Pie from './footer';
 import Video from './components/videos/Video';
 import { Button } from 'react-bootstrap'
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 import AddVideo from "./components/videos/AddVideos";
 import Quote from "./components/Quote"
+import Cards from './components/Cards'
 
 const getVideoImageUrl = (url) => {
   const preRegex = /.*v=(.*)/; //capturo todo lo que está después del "v="
@@ -71,22 +72,7 @@ function App() {
               <div>
                 <li className="d-flex justify-content-between pb-1 border-bottom my-4"><h3>{category.name}</h3>
                   <Button variant="danger" onClick={()=>handleDeleteCategory(category._id)}> Borrar categoria </Button></li>
-                <ul>
-                  {category.videos.map((video) => (
-                    <li>
-                      <img
-                        src={getVideoImageUrl(video.url)}
-                        alt={video.title}
-                      />
-                      {/* <a href={video.url}>{video.title}</a> */}
-
-                      <Link to={"/video/" + video._id}>
-                        <Button variant="danger">Ir al Video</Button>
-                      </Link>
-                      <br />
-                    </li>
-                  ))}
-                </ul>
+                <Cards videos={category.videos} getVideoImageUrl={getVideoImageUrl} />
               </div>
             ))}
           </ul>
