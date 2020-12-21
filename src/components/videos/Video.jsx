@@ -40,9 +40,9 @@ const Video = ({ videos, setVideos }) => {
         );
     }
     return (
-      <div className="contenedor">
+      <div className="container">
           <h1 className="col-12 d-flex justify-content-center">{video.title}</h1>
-        <ReactPlayer url={video.url} width="80%" controls playing className='react-player'/>
+        <ReactPlayer url={video.url} width="100%" controls playing className='react-player ratio ratio-1x1'/>
 
         <Button variant="danger" className="my-3" onClick={handleDelete} >Eliminar Video</Button>
       </div>

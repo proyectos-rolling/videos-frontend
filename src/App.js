@@ -34,6 +34,23 @@ function App() {
       .then((json) => setVideos(json));
   }, []);
 
+  const handleDeleteCategory = async (id) => {
+    // const confirm = window.confirm("Está seguro que quiere borrar la categoria?")
+    console.log(id)
+    // if (!confirm) {
+    //   return
+    // }
+    // try {
+    //   const response = await fetch(apiurl + "categories/" + category._id, { method: "DELETE" })
+    //   if (response.ok) {
+    //     console.log(response)
+    //     // setCategories(categories.filter(category => category._id !== id))
+    //   }
+    // } catch (error) {
+    //   console.log(error)
+    // }
+  }
+
   return (
     <>
       <Menu categories={categories} setCategories={setCategories} />
@@ -50,8 +67,9 @@ function App() {
           <ul>
             {categories.map((category) => (
               <div>
-                <li><h3>{category.name}</h3></li>
-                <br/>
+                <li><h3>{category.name}</h3>
+                  <Button variant="danger" onClick={()=>handleDeleteCategory(category._id)}> Borrar categoria </Button></li>
+                <br />
                 <ul>
                   {category.videos.map((video) => (
                     <li>
@@ -64,7 +82,7 @@ function App() {
                       <Link to={"/video/" + video._id}>
                         <Button variant="danger">Ir al Video</Button>
                       </Link>
-                      <br/>
+                      <br />
                     </li>
                   ))}
                 </ul>

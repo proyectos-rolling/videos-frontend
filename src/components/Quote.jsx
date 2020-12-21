@@ -14,10 +14,10 @@ const Quote = () => {
   return (
     <div className="col-12 mt-5 d-flex justify-content-center">
       <figure>
-        <blockquote class="blockquote">
+        <blockquote className="blockquote">
           <p>{quote.content}</p>
         </blockquote>
-        <figcaption class="blockquote-footer">
+        <figcaption className="blockquote-footer">
           {quote.author}
         </figcaption>
       </figure>
