@@ -64,13 +64,13 @@ function App() {
       <Switch>
         <Route path="/" exact>
           <Quote />
+          <div className="container">
           <h1 className="col-12  d-flex justify-content-center">Categorias</h1>
           <ul>
             {categories.map((category) => (
               <div>
-                <li><h3>{category.name}</h3>
+                <li className="d-flex justify-content-between pb-1 border-bottom my-4"><h3>{category.name}</h3>
                   <Button variant="danger" onClick={()=>handleDeleteCategory(category._id)}> Borrar categoria </Button></li>
-                <br />
                 <ul>
                   {category.videos.map((video) => (
                     <li>
@@ -90,6 +90,7 @@ function App() {
               </div>
             ))}
           </ul>
+          </div>
         </Route>
         <Route path="/video/:id">
           <Video videos={videos} setVideos={setVideos} />
