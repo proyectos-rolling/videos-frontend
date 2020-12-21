@@ -4,6 +4,6 @@
 }
 
 .react-player{
-    position: absolute;
+    position: relative;
     padding: 8px;
 }
