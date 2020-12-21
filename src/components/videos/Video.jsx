@@ -13,12 +13,10 @@ const Video = ({ videos }) => {
     // }
 
     return (
-        <div style={{ background: "tomato" }}>
+        <div>
             <ReactPlayer
-                url='https://www.youtube.com/watch?v=TKfRm6uNx7I&ab_channel=NPRMusic'
-                width='1000px'
-                height='500px'
-                style={{ position: 'absolute' }}
+                url={video.url}
+                width='100%'
                 controls
                 playing
             />

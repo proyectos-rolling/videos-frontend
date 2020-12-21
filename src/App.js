@@ -35,33 +35,36 @@ function App() {
   return (
     <>
       <Menu categories={categories} setCategories={setCategories} />
-      <h1 className="col-12  d-flex justify-content-center">Categorias</h1>
-      <ul>
-        {categories.map((category) => (
-          <div>
-            <li>{category.name}</li>
-            <ul>
-              {category.videos.map((video) => (
-                <li>
-                  <img src={getVideoImageUrl(video.url)} alt={video.title} />
-                  {/* <a href={video.url}>{video.title}</a> */}
-                  <Router>
-                    <Link to="/video">
-                      <Button>Ir al Video</Button>
-                    </Link>
-                    <Switch>
-                      <Route path="/video">
-                        <Video />
-                      </Route>
-                    </Switch>
-                  </Router>
+      <Switch>
+        <Route path="/" exact>
+          <h1 className="col-12  d-flex justify-content-center">Categorias</h1>
+          <ul>
+            {categories.map((category) => (
+              <div>
+                <li>{category.name}</li>
+                <ul>
+                  {category.videos.map((video) => (
+                    <li>
+                      <img
+                        src={getVideoImageUrl(video.url)}
+                        alt={video.title}
+                      />
+                      {/* <a href={video.url}>{video.title}</a> */}
 
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </ul>
+                      <Link to={"/video/" + video._id}>
+                        <Button>Ir al Video</Button>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </ul>
+        </Route>
+        <Route path="/video/:id">
+          <Video videos={videos} setVideos={setVideos} />
+        </Route>
+      </Switch>
       <Pie />
     </>
   );
