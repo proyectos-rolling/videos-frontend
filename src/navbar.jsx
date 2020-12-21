@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Button, Image } from 'react-bootstrap';
+import { Navbar, Nav, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from './logo.jpg';
 import Modalito from './Modal';

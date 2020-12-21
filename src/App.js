@@ -5,6 +5,7 @@ import Pie from './footer';
 import Video from './components/videos/Video';
 import { Button } from 'react-bootstrap'
 import { Switch, Route, Link } from "react-router-dom";
+import AddVideo from "./components/videos/AddVideos";
 
 const getVideoImageUrl = (url) => {
   const preRegex = /.*v=(.*)/; //capturo todo lo que está después del "v="
@@ -15,9 +16,9 @@ const getVideoImageUrl = (url) => {
   return VideoImageUrl
 }
 
+const apiurl = process.env.REACT_APP_APIURL;
 
 function App() {
-  const apiurl = process.env.REACT_APP_APIURL;
   const [categories, setCategories] = useState([]);
 
   const [videos, setVideos] = useState([])
@@ -35,6 +36,12 @@ function App() {
   return (
     <>
       <Menu categories={categories} setCategories={setCategories} />
+      <AddVideo
+        categories={categories}
+        videos={videos}
+        setVideos={setVideos}
+        setCategories={setCategories}
+      />
       <Switch>
         <Route path="/" exact>
           <h1 className="col-12  d-flex justify-content-center">Categorias</h1>
