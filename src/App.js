@@ -64,9 +64,9 @@ function App() {
                       <Link to={"/video/" + video._id}>
                         <Button variant="danger">Ir al Video</Button>
                       </Link>
+                      <br/>
                     </li>
                   ))}
-                  <br/>
                 </ul>
               </div>
             ))}
