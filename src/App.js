@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Menu from './navbar';
 import Pie from './footer';
+import Video from './components/videos/Video';
+import { Button } from 'react-bootstrap'
+import { Switch, Route, Link } from "react-router-dom";
+import AddVideo from "./components/videos/AddVideos";
 
 const getVideoImageUrl = (url) => {
   const preRegex = /.*v=(.*)/; //capturo todo lo que está después del "v="
@@ -12,42 +16,62 @@ const getVideoImageUrl = (url) => {
   return VideoImageUrl
 }
 
+const apiurl = process.env.REACT_APP_APIURL;
 
 function App() {
-  const apiurl = process.env.REACT_APP_APIURL;
   const [categories, setCategories] = useState([]);
 
   const [videos, setVideos] = useState([])
 
   useEffect(() => {
     fetch(apiurl + "categories").then(res => res.json()).then(json => setCategories(json))
-  }, [])
+  }, [videos])
 
-    useEffect(() => {
-      fetch(apiurl + "videos")
-        .then((res) => res.json())
-        .then((json) => setVideos(json));
-    }, []);
+  useEffect(() => {
+    fetch(apiurl + "videos")
+      .then((res) => res.json())
+      .then((json) => setVideos(json));
+  }, []);
 
   return (
     <>
       <Menu categories={categories} setCategories={setCategories} />
-      <h1 className="col-12  d-flex justify-content-center">Categorias</h1>
-      <ul>
-        {categories.map((category) => (
-          <div>
-            <li>{category.name}</li>
-            <ul>
-              {category.videos.map((video) => (
-                <li>
-                  <img src={getVideoImageUrl(video.url)} alt={video.title} />
-                  <a href={video.url}>{video.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </ul>
+      <AddVideo
+        categories={categories}
+        videos={videos}
+        setVideos={setVideos}
+        setCategories={setCategories}
+      />
+      <Switch>
+        <Route path="/" exact>
+          <h1 className="col-12  d-flex justify-content-center">Categorias</h1>
+          <ul>
+            {categories.map((category) => (
+              <div>
+                <li>{category.name}</li>
+                <ul>
+                  {category.videos.map((video) => (
+                    <li>
+                      <img
+                        src={getVideoImageUrl(video.url)}
+                        alt={video.title}
+                      />
+                      {/* <a href={video.url}>{video.title}</a> */}
+
+                      <Link to={"/video/" + video._id}>
+                        <Button>Ir al Video</Button>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </ul>
+        </Route>
+        <Route path="/video/:id">
+          <Video videos={videos} setVideos={setVideos} />
+        </Route>
+      </Switch>
       <Pie />
     </>
   );
