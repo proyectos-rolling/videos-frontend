@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Logo from './logo.jpg';
+import {Link} from "react-router-dom";
 
 
 const Pie = () => {
@@ -13,28 +14,11 @@ const Pie = () => {
             <div className="row d-flex">
               <div className="col-12 col-md d-flex justify-content-center align-items-center">
                 <a target="_blank" rel="noreferrer" href="#link">
-                  <img width="175" height="175" src={Logo} alt="logo1" />
+                 <Link to="/"> <img width="175" height="175" src={Logo} alt="logo1" /></Link>
                 </a>
               </div>
             </div>
             <hr />
-            <div className="row d-flex ">
-              <div className="col-4 d-flex justify-content-center" >
-                <a href="#top">
-                  <h5 className="text-danger">Inicio</h5>
-                </a>
-              </div>
-              <div className="col-4 d-flex justify-content-center " >
-                <a href="#top">
-                  <h5 className="text-danger">Agregar Video</h5>
-                </a>
-              </div>
-              <div className="col-4  d-flex justify-content-center" >
-                <a href="#top">
-                  <h5 className="text-danger">Contacto</h5>
-                </a>
-              </div>
-            </div>
             <hr />
           </div>
           <div className="row d-flex justify-content-around mt-2">

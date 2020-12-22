@@ -20,7 +20,6 @@ const Menu = ({categories,setCategories}) => {
                 <Modalito categories={categories} setCategories={setCategories}/>
             </Navbar.Collapse>
         </Navbar>
-        
     )
 }
 
