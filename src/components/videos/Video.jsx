@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import ReactPlayer from "react-player/youtube";
+import { FacebookProvider, Comments } from "react-facebook";
 import "./Video.css";
 
 const apiurl = process.env.REACT_APP_APIURL;
@@ -106,8 +107,13 @@ const Video = ({ videos, setVideos }) => {
           Eliminar Video
         </Button>
       </div>
+      <FacebookProvider appId="1043468026117602">
+        <Comments
+          href={`https://proyecto-videos-front.herokuapp.com/video/${video._id}`}
+        />
+      </FacebookProvider>
 
-      <h3 className="col-12 d-flex justify-content-center">Comentarios</h3>
+      {/* <h3 className="col-12 d-flex justify-content-center">Comentarios</h3>
       <Form onSubmit={addComment}>
         <Form.Group controlId="commentInput">
           <Form.Control
@@ -131,7 +137,7 @@ const Video = ({ videos, setVideos }) => {
               {comment}
             </div>
           ))}
-      </Form>
+      </Form> */}
     </div>
   );
 };
