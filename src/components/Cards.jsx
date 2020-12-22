@@ -8,7 +8,7 @@ const Cards = ({ videos,getVideoImageUrl}) => {
     <Container>
       <Row>
         {videos.map((video) => (
-          <Col>
+          <Col key={video._id} >
             <Card style={{ width: "18rem" }}>
             <Link to={"/video/" + video._id}>
               <Card.Img variant="top" src={getVideoImageUrl(video.url)} />

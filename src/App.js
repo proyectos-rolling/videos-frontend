@@ -69,7 +69,7 @@ function App() {
           <h1 className="col-12  d-flex justify-content-center">Categorias</h1>
           <ul>
             {categories.map((category) => (
-              <div>
+              <div key={category._id}>
                 <li className="d-flex justify-content-between pb-1 border-bottom my-4"><h3>{category.name}</h3>
                   <Button variant="danger" onClick={()=>handleDeleteCategory(category._id)}> Borrar categoria </Button></li>
                 <Cards videos={category.videos} getVideoImageUrl={getVideoImageUrl} />
