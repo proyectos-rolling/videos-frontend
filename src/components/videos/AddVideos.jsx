@@ -177,6 +177,7 @@ const AddVideoModal = ({
 export default AddVideos;
 
 const addVideoStyle = {
+  zIndex: "1",
   fontSize: "3rem",
   right: "2rem",
   bottom: "2rem",
