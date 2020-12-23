@@ -1,45 +1,45 @@
-.navbar{
-    background-color:white;
-    font-family: 'Contrail One', cursive;
-    }
+.navbar {
+  background-color: white;
+  font-family: "Contrail One", cursive;
+}
 
-    .navbar.Brand{
-    font-family: 'Contrail One', cursive;
-    color:black;
-  }
+.navbar.Brand {
+  font-family: "Contrail One", cursive;
+  color: black;
+}
 
-.logo{
+.logo {
   width: 70px;
   height: 70px;
 }
-.logo2{
-    width: 120px;
-    height: 120px;  
+.logo2 {
+  width: 120px;
+  height: 120px;
 }
 
-.logo1{
+.logo1 {
   width: 100px;
   height: 100px;
 }
 
-.blog-footer{
+.blog-footer {
   padding: 2.5rem;
   color: white;
   background-color: white;
-  border-top: .05rem solid #e5e5e5;
+  border-top: 0.05rem solid #e5e5e5;
 }
 
-.text-footer{
+.text-footer {
   text-decoration-color: white;
   color: white;
 }
 
-h1{
+h1 {
   padding: 5%;
-  font-family: 'Contrail One', cursive;
+  font-family: "Contrail One", cursive;
   margin-top: 10%;
 }
 
-Form{
-  font-family: 'Contrail One', cursive;
+Form {
+  font-family: "Contrail One", cursive;
 }

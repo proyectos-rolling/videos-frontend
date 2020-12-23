@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from "react";
+import { Modal, Button, Form } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const Modalito = ({categories, setCategories}) => {
+const Modalito = ({ categories, setCategories }) => {
   const apiurl = process.env.REACT_APP_APIURL;
   const [data, setData] = useState({
-    name: ""
+    name: "",
   });
 
   const handleChange = (e) => {
     try {
       setData({ ...data, [e.target.name]: e.target.value });
-      console.log(data)
+      console.log(data);
     } catch (error) {
       console.log(e.target);
       console.log(error);
@@ -29,25 +29,25 @@ const Modalito = ({categories, setCategories}) => {
       .then((response) => {
         if (response.ok) {
           setData({
-            name: ""
-          })
-         setShow(false) 
+            name: "",
+          });
+          setShow(false);
         } else {
           setData({
             name: "",
           });
-          alert("Ya existe categoría")
+          alert("Ya existe categoría");
           setShow(false);
-          return
+          return;
         }
         return response.json();
       })
       .then((json) => {
-        console.log(categories)
-        setCategories([...categories,json.category])
+        console.log(categories);
+        setCategories([...categories, json.category]);
       })
       .catch((error) => {
-        console.log(categories)
+        console.log(categories);
         console.error("Hubo un error en el fetch: ", error);
       });
   };
@@ -60,28 +60,35 @@ const Modalito = ({categories, setCategories}) => {
     <>
       <Button variant="danger" onClick={handleShow}>
         AGREGAR CATEGORIA
-        </Button>
+      </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Agregar Categoria</Modal.Title>
         </Modal.Header>
         <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicPassword">
-    <Form.Control required="text" name="name" value={data.name} type="text" placeholder="Categoria Nueva" onChange={handleChange}  />
-  </Form.Group>
-  <Button variant="danger" type="submit">
-    AGREGAR
-  </Button>
-  </Form>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Control
+              required="text"
+              name="name"
+              value={data.name}
+              type="text"
+              placeholder="Categoria Nueva"
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Button variant="danger" type="submit">
+            AGREGAR
+          </Button>
+        </Form>
         <Modal.Footer>
           <Button variant="muted" onClick={handleClose}>
             CERRAR
-            </Button>
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
   );
-}
+};
 
-export default Modalito
+export default Modalito;
